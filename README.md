@@ -2,7 +2,7 @@
 
 ## About
 
-This is the backend for the WeloveMovies project. It is a RESTful API built with Express and Knex. It is deployed on render.com.
+This is the backend for the WeloveMovies project. It is a RESTful API built with Express and Knex. It is deployed on [render.com](https://welovemovies-thinkful-o2a6.onrender.com/)
 
 The challenge was to build a RESTful API that allows users to search for movies, theaters, and reviews. The API also allows users to create, read, update, and delete movies, theaters, and reviews. Only the base express setup and seed data was from Thinkful. The rest of the code was written by me.
 
