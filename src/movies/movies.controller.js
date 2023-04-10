@@ -38,7 +38,8 @@ async function readReviews(req, res) {
     surname: ['critic', 'surname'],
     organization_name: ['critic', 'organization_name'],
   });
-  res.json({ data: reduceReviews(data) });
+  const mapCritics = reduceReviews(data);
+  res.json({ data: mapCritics });
 }
 
 

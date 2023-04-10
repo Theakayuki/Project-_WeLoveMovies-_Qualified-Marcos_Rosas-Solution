@@ -31,6 +31,7 @@ describe("Review Routes", () => {
       const data = { content: "Content" };
       const previous = await db("reviews").first();
 
+      console.log(previous);
       const response = await request(app)
         .put(`/reviews/${previous.review_id}`)
         .send({ data });
