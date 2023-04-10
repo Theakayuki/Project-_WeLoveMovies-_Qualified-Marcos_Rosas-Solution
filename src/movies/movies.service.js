@@ -12,7 +12,28 @@ function listIsShowing() {
     .distinct("m.movie_id");
 }
 
+function read(movieId) {
+  return knex("movies").select("*").where({ movie_id: movieId }).first();
+}
+
+function readWithTheaters(movieId) {
+  return knex("theaters as t")
+    .join("movies_theaters as mt", "t.theater_id", "mt.theater_id")
+    .select("t.*", "mt.is_showing", "mt.movie_id")
+    .where({ "mt.movie_id": movieId });
+}
+
+function readWithReviews(movieId) {
+  return knex("reviews as r")
+    .join("critics as c", "r.critic_id", "c.critic_id")
+    .select("r.*", "c.*")
+    .where({ "r.movie_id": movieId });
+}
+
 module.exports = {
   list,
   listIsShowing,
+  read,
+  readWithTheaters,
+  readWithReviews,
 };

@@ -12,5 +12,19 @@ router
   .get(cors(corsOptions), controller.list)
   .all(noMethodAllowed);
 
+router
+  .route('/:movieId')
+  .get(cors(corsOptions), controller.read)
+  .all(noMethodAllowed);
+
+router
+  .route('/:movieId/theaters')
+  .get(cors(corsOptions), controller.readTheaters)
+  .all(noMethodAllowed);
+
+router
+  .route('/:movieId/reviews')
+  .get(cors(corsOptions), controller.readReviews)
+  .all(noMethodAllowed);
 
 module.exports = router;
