@@ -24,6 +24,20 @@ have a postgres database running and create a .env file with the following varia
   DATABASE_URL=postgresql://<user>:<password>@localhost/<database>
   ```
 
+### Seeding the database
+
+First:
+
+  ```bash
+  npx knex migrate:latest
+  ```
+
+Then:
+
+```bash
+npx knex seed:run
+```
+
 ### Running the tests
 
   ```bash
